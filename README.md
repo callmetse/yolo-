@@ -8,7 +8,7 @@
 
 | 环节 | 状态 | 依据 |
 |---|---|---|
-| 电脑端环境（Python 3.12 + 虚拟环境 + 依赖冻结） | 已完成 | `people_counter/requirements.txt`、`station-device/requirements-pc.txt` |
+| 电脑端环境（Python 3.12 + 虚拟环境 + 依赖冻结，推理已启用 GPU） | 已完成 | `people_counter/requirements.txt`、`people_counter/环境变更记录.md`、`station-device/requirements-pc.txt` |
 | CSV 读写练习（模拟温度，含坏行处理） | 已完成 | `step2_write_csv.py`、`step3_read_plot.py` |
 | 录像人员检测（YOLO11n，imgsz 640，conf 0.25） | 已完成 | `step4_yolo11n_person.py` |
 | 逐帧人数写 CSV（YOLO11s，imgsz 1280，conf 0.40） | 已完成 | `step5_count_csv.py` |
@@ -28,6 +28,7 @@
 ├─ project.md                跨项目入口：当前主计划与执行顺序
 ├─ people_counter/           视觉验证区：YOLO 人数统计的脚本与教程
 │   ├─ README.md             从零开始的环境与 CSV 教程（含 8 个必答问题）
+│   ├─ 环境变更记录.md        开发机环境改动的留痕：GPU 版 torch 安装、验证数据、回退方法
 │   ├─ step1_env_check.py    环境自检
 │   ├─ step2_write_csv.py    每 5 秒写一行模拟温度到 CSV
 │   ├─ step3_read_plot.py    读回 CSV、算统计量、画曲线

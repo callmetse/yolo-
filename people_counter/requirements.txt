@@ -8,10 +8,13 @@ matplotlib==3.9.2
 
 # 任务2/3 要用到的，已在 2026-09-19 装好（版本就是当前 .venv 里的）：
 opencv-python==5.0.0.93    # 读取视频、逐帧处理、写结果视频
-ultralytics==8.4.155       # YOLO11n 人员检测（会自动带上 CPU 版 PyTorch）
+ultralytics==8.4.155       # YOLO11n 人员检测（依赖 torch，见下面一段）
 # pandas                   ← 可选：更方便地处理表格数据，用到再取消注释
 #
-# 【可选升级：用显卡跑】上面装的是 CPU 版 torch，本机 RTX 3050 还没用上。
-# 想切到 GPU（快好几倍），执行下面两条（共约 2.5 GB，装完重跑 step4 即可）：
-#   ./.venv/Scripts/python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-#   ./.venv/Scripts/python.exe -c "import torch; print(torch.cuda.is_available())"   # 应输出 True
+# 【显卡（GPU）】2026-09-21 已把 torch 换成 CUDA 版，推理走本机 RTX 3050。
+# 当前实际装的是 torch==2.14.0+cu126 与 torchvision==0.29.0+cu126（不再是 CPU 版）。
+# 重建环境时要注意：PyPI 上的 torch 是 CPU 版，CUDA 版必须从 PyTorch 官方源单独装：
+#   NO_PROXY="*" no_proxy="*" ./.venv/Scripts/python.exe -m pip install \
+#     "torch==2.14.0+cu126" "torchvision==0.29.0+cu126" \
+#     --index-url https://download.pytorch.org/whl/cu126
+# 为什么选 cu126、怎么验证、怎么退回 CPU 版、踩过的代理坑：见 环境变更记录.md
