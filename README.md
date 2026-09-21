@@ -29,12 +29,14 @@
 ├─ people_counter/           视觉验证区：YOLO 人数统计的脚本与教程
 │   ├─ README.md             从零开始的环境与 CSV 教程（含 8 个必答问题）
 │   ├─ 环境变更记录.md        开发机环境改动的留痕：GPU 版 torch 安装、验证数据、回退方法
+│   ├─ 树莓派移植前YOLO任务清单.md  移植前的全部任务、验收判据与时间预算
 │   ├─ step1_env_check.py    环境自检
 │   ├─ step2_write_csv.py    每 5 秒写一行模拟温度到 CSV
 │   ├─ step3_read_plot.py    读回 CSV、算统计量、画曲线
 │   ├─ step4_yolo11n_person.py  录像画框（只保留 person）
 │   ├─ step5_count_csv.py    逐帧人数写 CSV
-│   └─ step6_person_curve.py 人数曲线 + 高峰区间
+│   ├─ step6_person_curve.py 人数曲线 + 高峰区间
+│   └─ step7_prelabel.py     抽帧 + YOLO 预标注（导出标注工具可直接修改的草稿）
 └─ station-device/           装置集成主仓库：字段、口径、接口与阶段计划
     ├─ project.md            人员识别、数据采集与交付推进计划（主文档）
     ├─ docs/技术选型与文献清单.md  检测/跟踪/占用估计/边缘部署的选型依据与文献
