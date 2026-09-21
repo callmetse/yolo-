@@ -1,0 +1,25 @@
+# 虚拟环境：只在本机存在，不提交、不复制到树莓派
+.venv/
+
+# Python 运行缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 输入视频：体积大，属场地资料，不进版本库
+inputs/*.mp4
+inputs/*.avi
+inputs/*.mov
+inputs/*.mkv
+
+# 输出：CSV、JSON、日志、检测结果图，都是可再生的
+outputs/*
+!outputs/.gitkeep
+
+# 模型权重：体积大，统一放在 D:\Datasets\models
+*.pt
+*.onnx
+*.engine
+
+# 编辑器个人设置
+.vscode/*.local.json

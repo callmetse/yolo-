@@ -1,0 +1,13 @@
+{
+  // 把解释器锁定到项目自己的虚拟环境，避免 VS Code 用成系统里那个 Python
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.terminal.activateEnvironment": true,
+
+  // 统一用 UTF-8，避免中文注释在 Windows 上互相乱码
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+
+  // 保存时自动去掉行尾空格、统一换行符
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\n"
+}

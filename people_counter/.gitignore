@@ -1,0 +1,16 @@
+# 虚拟环境：绝对不能提交，每台电脑各自新建
+.venv/
+
+# Python 运行缓存
+__pycache__/
+*.pyc
+
+# 程序产生的数据文件（体积会越来越大，只保留目录结构）
+data/*.csv
+data/*.png
+data/*.jpg
+data/*.mp4
+!data/.gitkeep
+
+# VS Code 的个人设置
+.vscode/*.local.json

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+
+  "_说明": "带下划线开头的键是给阅读者的说明，程序读取时应跳过。device_id、zone_id、upload_endpoint_url 需与导师确认后填写，见 README 第六节。",
+
+  "device_id": "node_01",
+  "zone_id": "zone_A",
+
+  "_周期说明": "视觉与环境分开设周期：人数趋势可以低频，环境量本身更新就慢。上传周期与采集周期独立，网络慢时上传不阻塞采集。",
+  "vision_interval_s": 5,
+  "environment_interval_s": 5,
+  "upload_interval_s": 5,
+
+  "_上传说明": "默认 HTTP；若项目组已有 MQTT 平台，改用其接口，不同时搭两套。endpoint 为空时只做本地记录，不发送。",
+  "upload_protocol": "http",
+  "upload_endpoint_url": "",
+  "http_timeout_s": 10,
+  "max_retries": 3,
+  "retry_backoff_s": 5,
+
+  "_存储说明": "原始数据先落本地，再考虑发送。容量上限用于防止磁盘写满。",
+  "output_dir": "outputs",
+  "inputs_dir": "inputs",
+  "local_cache_path": "outputs/cache.jsonl",
+  "max_cache_mb": 512,
+
+  "model_path": "yolo11n.pt",
+  "log_dir": "outputs/logs"
+}

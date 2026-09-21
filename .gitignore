@@ -1,0 +1,37 @@
+# 这份 .gitignore 是仓库的安全网：挡住体积大、含人员画面、或可再生的文件。
+# 各子目录里的 .gitignore 管自己那部分，这里是兜底——防止整块目录被误提交。
+
+# 虚拟环境：只能在本机新建，绝不能复制或提交（内部记录的是绝对路径）
+.venv/
+venv/
+
+# Python 运行缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 模型权重：体积大，统一放在本机数据盘（见 project.md 的存放约定）
+*.pt
+*.onnx
+*.engine
+*.hef
+*.tflite
+
+# 录像与照片：涉及场地与人员画面，按约定不进版本库
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.jpg
+*.jpeg
+
+# 程序产生的数据与输出目录（可再生的不提交；.gitkeep 除外）
+*.csv
+*.jsonl
+runs/
+!outputs/.gitkeep
+!inputs/.gitkeep
+!people_counter/data/.gitkeep
+
+# 如果某个 CSV 确实需要入库（例如交接包里的分钟特征），用强制添加：
+#   git add -f 路径/文件.csv

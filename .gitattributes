@@ -1,0 +1,9 @@
+# 统一换行符：开发在 Windows、最终要部署到 Linux（树莓派），
+# 仓库内统一存 LF，避免两边来回转换导致的"文件显示被修改"。
+* text=auto eol=lf
+
+# 二进制文件不做换行转换
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.pt binary

@@ -1,0 +1,61 @@
+{
+  // 按 F5 就能直接运行当前脚本。三个脚本各配了一项，从左侧下拉框切换。
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "1 环境自检",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step1_env_check.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "2 写 CSV（每5秒一行）",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step2_write_csv.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "3 读 CSV 并画曲线",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step3_read_plot.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "4 YOLO11n 只识别 person",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step4_yolo11n_person.py",
+      "args": ["--no-show"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "5 每帧人数写 CSV",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step5_count_csv.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "6 人数曲线与高峰",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/step6_person_curve.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    }
+  ]
+}
